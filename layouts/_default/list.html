@@ -1,19 +1,15 @@
 {{ define "section_content" }}
 <div class="section" id="content">
-    {{ .Content }}
-    <ul>
-        {{ range .Data.Pages }}
-        <li>
-            {{ if .Params.showDate }}
-
-            {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006")}} --
-
-            {{ end }}
-            <a href="{{.Permalink}}">
-                {{.Title}}
-            </a>
-        </li>
-        {{ end }}
-    </ul>
+  {{ .Content }}
+  <div>
+    {{ range .Data.Pages }}
+      {{ if .Params.showDate }}
+        <div class="col col-1 secondary-text">
+          {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006")}}
+        </div>
+      {{ end }}
+      <div class="col col-4"><a href="{{.Permalink}}">{{.Title}}</a></div>
+    {{ end }}
+  </div>
 </div>
 {{ end }}

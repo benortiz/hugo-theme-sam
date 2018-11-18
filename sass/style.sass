@@ -8,16 +8,14 @@
     box-sizing: border-box
 
 html
-    background-color: $dark-grey
+    background-color: $white
     font-family: $font
     font-size: 16px
 
 body
     font-size: $body-size
     font-family: $font
-    color: $body-text
-    line-height: 2rem
-    letter-spacing: 1.5px
+    color: $black
     text-shadow: none
     display: flex
     flex-direction: column
@@ -45,8 +43,7 @@ p
 
 a
     color: $links
-    text-decoration: none
-    border-bottom: 2px solid $links
+    text-decoration: underline
     +ease(0.5s)
     &:hover
         color: $links-hover
@@ -72,6 +69,7 @@ hr
     width: 45%
     @media screen and (max-width: 736px)
         padding: 1rem
+        margin-top: 0rem
         width: 100%
 
 .tag-container
@@ -116,6 +114,18 @@ hr
     a
         border-bottom: none
         display: contents
+
+.col
+  display: inline-block
+
+  &.col-1
+    width: 18% !important
+
+  &.col-4
+    width: 80% !important
+
+.secondary-text
+  color: $light-gray
 
 @import "elements"
 
